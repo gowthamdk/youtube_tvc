@@ -11,10 +11,10 @@ def download_progress(total, recvd, ratio, rate, eta):
     print(total, recvd, rate, eta)
 
 #GUI Creation
-msg = "Enter the keyword or brand name"
+msg = "Enter the keyword to search"
 title = "Youtube TVC Scrapper"
-fieldNames = ["Folder Name (Enter Brand Name)",
-              "No. of pages to be scrapped"]
+fieldNames = ["Enter the Brand Name :",
+              "No. of pages to be scrapped :"]
 fieldValues = multenterbox(msg, title, fieldNames)
 
 while 1:
@@ -35,13 +35,10 @@ if fieldValues is None:
 folder_name = "downloads\\" + fieldValues[0].lower() + "\\"
 if not path.exists(folder_name): makedirs(folder_name)
 pages = fieldValues[1]
-fh = io.open("reports\\" + fieldValues[0].lower() + ".xls", "w", encoding='utf8')
 
-file_name = "Lux shampoo ad" # change name here
-folder_name = "downloads\\" + file_name + "\\"
-if not path.exists(folder_name): makedirs(folder_name)
-if not path.exists("reports"): makedirs("reports")
-fh = io.open("reports\\" + file_name + ".xls", "w", encoding='utf8')
+report_folder = "reports\\"
+if not path.exists(report_folder): makedirs(report_folder)
+fh = io.open("reports\\" + fieldValues[0].lower() + ".xls", "w", encoding='utf8')
 
 fh.write(u"URL\tTitle\tAuthor\tUser Name\tCategory\tLikes\tDislikes\tDuration\tPublished\tRating\tView Count\tFile Name\n")
 
