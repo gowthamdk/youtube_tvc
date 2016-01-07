@@ -37,11 +37,6 @@ if not path.exists(folder_name): makedirs(folder_name)
 pages = fieldValues[1]
 fh = io.open("reports\\" + fieldValues[0].lower() + ".xls", "w", encoding='utf8')
 
-file_name = "Lux shampoo ad" # change name here
-folder_name = "downloads\\" + file_name + "\\"
-if not path.exists(folder_name): makedirs(folder_name)
-if not path.exists("reports"): makedirs("reports")
-fh = io.open("reports\\" + file_name + ".xls", "w", encoding='utf8')
 
 fh.write(u"URL\tTitle\tAuthor\tUser Name\tCategory\tLikes\tDislikes\tDuration\tPublished\tRating\tView Count\tFile Name\n")
 
