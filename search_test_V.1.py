@@ -31,7 +31,7 @@ while 1:
 if fieldValues is None:
     exit(0)
     
-#file_name = "lux shampoo ad"# change name here
+#file_name = "lux shampoo ad" # change name here
 folder_name = "downloads\\" + fieldValues[0].lower() + "\\"
 if not path.exists(folder_name): makedirs(folder_name)
 pages = fieldValues[1]
